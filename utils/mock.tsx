@@ -37,7 +37,7 @@ export const products: Product[] = [
   },
   {
     id:3,
-    title: "brown-pointedtoe-pumps.avif",
+    title: "Brown Pointed-Toe Pumps",
     image: ["/picss/brown-pointedtoe-pumps.avif"],
     slug: "brown-pointedtoe-pumps.avif",
     description: "Best women shoes lorem",
@@ -93,7 +93,7 @@ export const products: Product[] = [
   },
   {
     id:7,
-    title: "brownleather-peep-toe-heel.avif",
+    title: "Brown Leather Peep-Toe Heel",
     image: ["/picss/brownleather-peep-toe-heel.avif"],
     slug: "brownleather-peep-toe-heel.avif",
     description: "Best women shoes lorem",
@@ -167,11 +167,11 @@ export const products: Product[] = [
   },
   {
     id:12,
-    title: "Fitted Jeans",
+    title: "Blue Demin Jeans",
     image: [
-      "/picsp/fitjeans.jpeg"
+      "/picsp/blue-demin-jeans.avif"
     ],
-    slug: "fit-jeans",
+    slug: "blue-demin-jeans.avif",
     description: "Best women pants lorem",
     price: 150,
     catogery: "pants",
@@ -183,7 +183,7 @@ export const products: Product[] = [
 
   {
     id:13,
-    title: "glittered-pointedtoe-heel.avif",
+    title: "Glittered Pointed-Toe Heel",
     image: ["/picss/glittered-pointedtoe-heel.avif"],
     slug: "glittered-pointedtoe-heel.avif",
     description: "Best women shoes lorem",
@@ -210,7 +210,7 @@ export const products: Product[] = [
   },
   {
     id:15,
-    title: "lepordprintedshoes.avif",
+    title: "Lepord Printed Shoes",
     image: ["/picss/lepordprintedshoes.avif"],
     slug: "lepordprintedshoes.avif",
     description: "Best women shoes lorem",
@@ -508,7 +508,7 @@ export const products: Product[] = [
 },
 {
   id:35,
-  title: "rainbowstriped-sandal.avif",
+  title: "Rainbow Striped Sandal",
   image: ["/picss/rainbowstriped-sandal.avif"],
   slug: "rainbowstriped-sandal.avif",
   description: "Best women shoes lorem",
@@ -538,7 +538,7 @@ export const products: Product[] = [
 
 {
   id:37,
-  title: "white-glittered-peep-toe-heeled-shoes.avif",
+  title: "White Glittered Peep-Toe Heels",
   image: ["/picss/white-glittered-peep-toe-heeled-shoes.avif"],
   slug: "white-glittered-peep-toe-heeled-shoes.avif",
   description: "Best women shoes lorem",
@@ -995,7 +995,7 @@ export const products: Product[] = [
 },
 {
   id:68,
-  title: "leporedprintedsidezipboots.avif",
+  title: "Lepored Printed Side-Zip Boots",
   image: ["/picss/leporedprintedsidezipboots.avif"],
   slug: "leporedprintedsidezipboots.avif",
   description: "Best women shoes lorem",
@@ -1008,7 +1008,7 @@ export const products: Product[] = [
 },     
 {
   id:69,
-  title: "yellow-leather-ankle-strap-sandals.avif",
+  title: "Yellow Leather Ankle Strap Sandals",
   image: ["/picss/yellow-leather-ankle-strap-sandals.avif"],
   slug: "yellow-leather-ankle-strap-sandals.avif",
   description: "Best women shoes lorem",
@@ -1019,20 +1019,22 @@ export const products: Product[] = [
   quantity: 1,
   discount: 15,
 },
+{
+  id:70,
+  title: "Pink Pants",
+  image: [
+    "/picsp/pink-pants.avif"
+  ],
+  slug: "pink-pants.avif",
+  description: "Best women pants lorem",
+  price: 150,
+  catogery: "pants",
+  size: ["S", "M", "L", "Xl"],
+  color: ["#ffffff", "#86B6F6", "#7D0A0A"],
+  quantity: 1,
+  discount: 15,
+},
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const PeopleId:People[] = [
     {
