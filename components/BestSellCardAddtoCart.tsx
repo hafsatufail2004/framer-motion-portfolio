@@ -1,19 +1,20 @@
-"use client";
-
+"use client"
 import {
   Popover,
-  PopoverTrigger,
   PopoverContent,
-} from "@radix-ui/react-popover";
-import React, { useState } from "react";
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "./ui/button";
-import { FaShoppingCart } from "react-icons/fa";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { addtoCart } from "@/app/store/features/cart";
+import { FaShoppingCart } from "react-icons/fa";
+import { useAppSelector } from "@/app/store/hooks";
+import { useState } from "react";
+import { useAppDispatch } from "@/app/store/hooks";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BestSellCardAddtoCart = ({ slug }: { slug: string }) => {
-  // data calling
+  // calling product
   const product = useAppSelector((state) => state.products).find(
     (val) => val.slug == slug
   );
@@ -32,7 +33,7 @@ const BestSellCardAddtoCart = ({ slug }: { slug: string }) => {
     quantity: product?.quantity,
     color: product?.color[0],
   });
-  // toast
+  // notify toast
   const notify = () =>
     toast.success("Product added successfully!", {
       position: "top-right",
@@ -44,22 +45,18 @@ const BestSellCardAddtoCart = ({ slug }: { slug: string }) => {
       progress: undefined,
       theme: "light",
     });
-
   return (
-    <>
+    <div>
       <Popover>
         <PopoverTrigger asChild>
-          <Button
-            onClick={() => dispatch(addtoCart(cardItem))}
-            className="group bg-myBlackHead scroll-m-20 mt-2 rounded-xl shadow-xl tracking-tight text-xs font-semibold hover:bg-transparent text-myWhite hover:text-myOrange duration-300 bottom-2 right-2 absolute"
-          >
+          <Button className="group bg-myBlackHead scroll-m-20 mt-2 rounded-xl shadow-xl tracking-tight text-xs font-semibold hover:bg-transparent text-myWhite hover:text-myOrange duration-300 bottom-2 right-2 absolute">
             <FaShoppingCart className="mr-2 h-4 w-4 group-hover:text-myOrange duration-300" />
             Add to Cart
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[13rem] px-3 bg-myWhite">
-          {/* size */}
-          <div className="flex items-center">
+        <PopoverContent className="w-[15rem] bg-myWhite">
+          {/* size div start here */}
+          <div className="flex ml-6 items-center">
             <span className="mr-3 scroll-m-20 text-base font-semibold tracking-tight ">
               Size
             </span>
@@ -69,7 +66,7 @@ const BestSellCardAddtoCart = ({ slug }: { slug: string }) => {
                   onChange={(e) =>
                     setCardItem({ ...cardItem, size: e.target.value })
                   }
-                  className="select"
+                  className="select h-10 select-bordered"
                 >
                   <option disabled selected>
                     Select Size
@@ -81,47 +78,51 @@ const BestSellCardAddtoCart = ({ slug }: { slug: string }) => {
               </label>
             </div>
           </div>
-
-          {/* color */}
-          <div className="flex mt-2">
+          {/* size options end */}
+          {/* color div start here */}
+          <div className="flex mt-5">
             {/* color options start */}
             <span className="mr-3 scroll-m-20 text-base font-semibold tracking-tight ">
               Color
             </span>
             {product?.color.map((item: any, i: any) => (
               <button
-                onClick={() => setCardItem({ ...cardItem, color: item })}
                 key={i}
-                className="border-2 border-gray-300 active:border-black focus:border-black ml-1 rounded-full w-5 h-5 focus:outline-none"
+                onClick={() => setCardItem({ ...cardItem, color: item })}
+                className="border-2 border-gray-300 active:border-black focus:border-black ml-1  
+rounded-full w-6 h-6 focus:outline-none"
                 style={{ backgroundColor: item }}
               />
             ))}
           </div>
-          {/* add to cart */}
+          {/* color options end */}
+          {/* add to cart button */}
           <div className="w-fit" onClick={notify}>
-            <Button className="group w-full bg-myBlackHead scroll-m-20 mt-2 rounded-xl shadow-xl tracking-tight text-xs font-semibold hover:bg-transparent text-myWhite hover:text-myOrange duration-300">
-              <FaShoppingCart className="mr-2 h-3 w-3 group-hover:text-myOrange duration-300" />
+            <Button
+              onClick={() => dispatch(addtoCart(cardItem))}
+              className="group mt-5 bg-myBlackHead scroll-m-20 w-full rounded-xl shadow-xl tracking-tight 
+text-xs font-semibold hover:bg-transparent text-myWhite hover:text-myOrange duration-300 "
+            >
+              <FaShoppingCart className="mr-2 h-4 w-4 group-hover:text-myOrange duration-300" />
               Add to Cart
             </Button>
           </div>
-          {/* add to cart end */}
         </PopoverContent>
       </Popover>
       <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-    </>
+     position="top-right"
+     autoClose={3000}
+     hideProgressBar={false}
+     newestOnTop={false}
+     closeOnClick
+     rtl={false}
+     pauseOnFocusLoss
+     draggable
+     pauseOnHover
+     theme="light"
+   />
+    </div>
   );
 };
 
 export default BestSellCardAddtoCart;
- 
